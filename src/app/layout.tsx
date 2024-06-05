@@ -1,6 +1,11 @@
 import Providers from "./providers";
-import Navbar from "../components/Navbar";
 import "./globals.css";
+import {Medula_One} from '@next/font/google' 
+
+const medulaone = Medula_One({
+    subsets: ['latin'],
+    weight: '400',
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -14,9 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={medulaone.className}>
         <Providers>
-          <Navbar />
           <div className="container mx-auto">{children}</div>
         </Providers>
       </body>
